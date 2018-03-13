@@ -1,0 +1,171 @@
+@import (less) 'mixins.less';
+@import (less) 'variables.less';
+/*************************************************************
+Styles
+**************************************************************/
+.input-wrapper{
+  input, select, textarea{
+    background: white;
+  }
+  > .button{
+    &.upload{
+      border-color: lighten(@success-300, 15%);
+      background: lighten(@success-50, 5%);
+      color: @success-700;
+    }
+  }
+  &.upload-input-wapper, &.multi-upload-input-wapper{
+    &.no-images{
+      .images-wrapper{
+        display: none;
+      }
+    }
+    .images-wrapper{
+      clear: both;
+      background: @light-gray-color;      
+      width: 100%;
+      margin-top: 2px;
+      text-align: center;           
+      width: 100%;
+      float: left;
+      padding: 5px 0 16px;
+      .image-wrapper{
+        display: inline-block;
+        position:relative;        
+        margin: 10px 10px 0;
+        padding: 1px;
+        float: left;
+        .roundedcorners(25px);
+        img{              
+          width: 50px;
+          height: 50px;
+          .roundedcorners(25px);
+          .box-shadow(~"0 0 0px 2px #fff, 0 0 2px 4px #ddd");
+        }
+        i.fa{
+          float: left;
+          position: absolute;
+          top: -4px;
+          background: rgba(45, 45, 45, 0.21);
+          width: 100%;
+          height: 100%;
+          border-radius: 50px;
+          padding: 14px 3px;
+          color: #FDFDFD;
+          font-size: 18px;
+          cursor: pointer;
+          left: 0;
+          top: 0;
+          text-align: center;
+          opacity:0;
+          .transition(all, 0.25s , ease-out);
+          &.move-img{
+            top: -8px;
+            right: -43px;
+            padding: 0;
+            display: inline-block;
+            opacity: 1;
+            width: auto;
+            height: auto;
+            background: transparent;
+            color: @dark-color;
+            cursor: move;
+          }
+        }
+        &:hover{
+          i.fa{
+            opacity:1;
+          }
+        }
+
+      }
+      .sortable-placeholder{
+        background: @orange-300;
+        width: 60px;
+        height: 60px;
+        float: left;
+        padding: 1px;
+        display: inline-block;
+        .box-shadow(~"0 0 0px 2px #fff, 0 0 2px 4px #ddd");
+      }
+    }
+  }
+  &.editor-input-wrapper{
+    label{
+      .box-shadow(none);
+      background: @light-gray-color;
+      color: @dark-color;
+      border-color: @light-gray-color;
+      width: 100%;
+      border-bottom: 1px solid @light-border;
+      margin-bottom: 5px;
+    }
+    button{
+      .roundedcorners(2px) !important;
+      width: auto;
+    }
+    input, textarea{
+      float: none !important;
+      width: auto !important;
+    }
+    textarea{
+      width: 100% !important;
+      border-color: @light-border;
+    }
+  }
+  &.multi-upload-input-wapper{
+    .images-wrapper{
+      margin-top: 5px; 
+      padding: 2px 0 12px 22px;
+      position: relative;
+      float: left;
+    }
+  } 
+  &.style-1{
+    &.upload-input-wapper, &.multi-upload-input-wapper{
+      .images-wrapper{
+        margin: 4px -3px 15px;
+        width: calc(~"100% + 6px");
+        border: 1px dashed @light-border; 
+      }
+    }
+  }
+  &.style-2, &.style-3{    
+    &.editor-input-wrapper{
+      label{
+        color: @dark-color;
+      }
+    }
+  }
+  &.style-2{
+    &.upload-input-wapper, &.multi-upload-input-wapper{
+      .images-wrapper{
+        padding: 5px 0 6px;
+      }
+    }
+    &.editor-input-wrapper{
+      label{
+        background: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+  &.style-3{
+    > .button{
+      &.upload{
+        border-color: lighten(@success-300, 15%);
+        background: lighten(@success-50, 5%);
+        color: @success-700;
+      }
+    }
+    &.editor-input-wrapper{
+      label{
+        width: auto;
+        background: white;
+        border-color: transparent;
+        color: @dark-color;
+      }
+    }
+  }
+}
+

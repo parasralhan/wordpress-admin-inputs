@@ -1,0 +1,4 @@
+*.phpintel
+*.sublime*
+/nbproject/
+vendor/

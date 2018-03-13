@@ -1,0 +1,188 @@
+/* ****************************************************************
+MIXINS
+********************************************************************/
+
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+    -moz-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees); // IE9 only
+  transform: rotate(@degrees);
+}
+.scale(@ratio; @ratio-y...) {
+  -webkit-transform: scale(@ratio, @ratio-y);
+  -moz-transform: scale(@ratio, @ratio-y);
+  -o-transform: scale(@ratio, @ratio-y);
+  -ms-transform: scale(@ratio, @ratio-y); // IE9 only
+  transform: scale(@ratio, @ratio-y);
+}
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y); // IE9 only
+  transform: translate(@x, @y);
+}
+.skew(@x; @y) {
+  -webkit-transform: skew(@x, @y);
+  -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+  transform: skew(@x, @y);
+}
+.translate3d(@x; @y; @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
+}
+
+.rotateX(@degrees) {
+  -webkit-transform: rotateX(@degrees);
+  -moz-transform: rotateX(@degrees);
+  -o-transform: rotateX(@degrees);
+  -ms-transform: rotateX(@degrees); // IE9 only
+  transform: rotateX(@degrees);
+}
+.rotateY(@degrees) {
+  -webkit-transform: rotateY(@degrees);
+  -moz-transform: rotateY(@degrees);
+  -o-transform: rotateY(@degrees);
+  -ms-transform: rotateY(@degrees); // IE9 only
+  transform: rotateY(@degrees);
+}
+.perspective(@perspective) {
+  -webkit-perspective: @perspective;
+  -moz-perspective: @perspective;
+  perspective: @perspective;
+}
+.perspective-origin(@perspective) {
+  -webkit-perspective-origin: @perspective;
+  -moz-perspective-origin: @perspective;
+  perspective-origin: @perspective;
+}
+.transform-origin(@origin) {
+  -webkit-transform-origin: @origin;
+  -moz-transform-origin: @origin;
+  -ms-transform-origin: @origin; // IE9 only
+  transform-origin: @origin;
+}
+
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -o-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+  box-shadow: @shadow;
+}
+
+.transition-delay(@delay) {
+  -moz-transition-delay: @delay;
+  -o-transition-delay: @delay;
+  -ms-transition-delay: @delay;
+  -webkit-transition-delay: @delay;
+  transition-delay: @delay;
+}
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.placeholder(@color) {
+  &::-moz-placeholder           { color: @color; } // Firefox
+  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+.background-image(@color: transparent; @repeat: no-repeat; @position: 0 0; @size: auto auto){
+  background-color : @color;
+  background-repeat: @repeat;
+  background-position: @position;
+  background-size: @size;
+}
+
+.roundedcorners (@radius: 10px) {
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.gradientX (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background:-webkit-linear-gradient(left, @startColor 0%,@endColor 100%);
+  background: -moz-linear-gradient(left, @startColor, @endColor);
+  background: -ms-linear-gradient(left, @startColor, @endColor);
+  background: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+/* ****************************************************************
+ANIMATIONS
+********************************************************************/
+.animation(@animation) {
+  -webkit-animation: @animation;
+  animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+  animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+  animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+  animation-direction: @direction;
+}
+
+.transition (@prop: all , @time: 0.75s , @ease: ease-out) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+
+/* ****************************************************************
+BOX SIZING
+********************************************************************/
+.box-sizing(@box-model) {
+  -webkit-box-sizing: @box-model; // Safari <= 5
+  -moz-box-sizing: @box-model; // Firefox <= 19
+  box-sizing: @box-model;
+}

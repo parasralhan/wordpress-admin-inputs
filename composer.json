@@ -1,0 +1,23 @@
+{
+  "name": "bonzer/wordpress-admin-inputs",
+  "description": "Form fields for your Wordpress admin panel",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Paras Ralhan",
+          "email": "ralhan.paras@gmail.com"
+      }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0",
+    "bonzer/inputs": "dev-master"
+  },
+  "autoload": {
+    "files": ["src/bootstrap.php"],
+    "psr-4": {
+      "Bonzer\\Inputs_WP\\": "src/"
+    }
+  }
+}

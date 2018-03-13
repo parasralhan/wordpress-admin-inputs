@@ -1,0 +1,238 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "311947cfbf87a1e065f026ef32eb1020",
+    "content-hash": "c7389057b4ff3c2ae68367e394ae7fa0",
+    "packages": [
+        {
+            "name": "bonzer/events",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parasralhan/events.git",
+                "reference": "0d4a3e085c80b8f20c65c2c238e1c4208a812374"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parasralhan/events/zipball/0d4a3e085c80b8f20c65c2c238e1c4208a812374",
+                "reference": "0d4a3e085c80b8f20c65c2c238e1c4208a812374",
+                "shasum": ""
+            },
+            "require": {
+                "bonzer/exceptions": "dev-master",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bonzer\\Events\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paras Ralhan",
+                    "email": "ralhan.paras@gmail.com"
+                }
+            ],
+            "description": "Responsible for implementing Event System in your application",
+            "time": "2018-03-11 07:20:56"
+        },
+        {
+            "name": "bonzer/exceptions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parasralhan/exceptions.git",
+                "reference": "9d1ae73b537acc51ba4ebc597c7c04757b1c728c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parasralhan/exceptions/zipball/9d1ae73b537acc51ba4ebc597c7c04757b1c728c",
+                "reference": "9d1ae73b537acc51ba4ebc597c7c04757b1c728c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bonzer\\Exceptions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paras Ralhan",
+                    "email": "ralhan.paras@gmail.com"
+                }
+            ],
+            "description": "Simple PHP Exception Utilities",
+            "time": "2018-03-04 16:48:03"
+        },
+        {
+            "name": "bonzer/inputs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parasralhan/form-fields.git",
+                "reference": "00853a861fc854425c7369ef34ffe09c9247afd2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parasralhan/form-fields/zipball/00853a861fc854425c7369ef34ffe09c9247afd2",
+                "reference": "00853a861fc854425c7369ef34ffe09c9247afd2",
+                "shasum": ""
+            },
+            "require": {
+                "bonzer/events": "dev-master",
+                "bonzer/exceptions": "dev-master",
+                "bonzer/ioc-container": "dev-master",
+                "oyejorge/less.php": "v1.7.0.14",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/bootstrap.php"
+                ],
+                "psr-4": {
+                    "Bonzer\\Inputs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paras Ralhan",
+                    "email": "ralhan.paras@gmail.com"
+                }
+            ],
+            "description": "A form inputs library",
+            "time": "2018-03-13 10:37:35"
+        },
+        {
+            "name": "bonzer/ioc-container",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parasralhan/ioc-container.git",
+                "reference": "08016fd3aaf4c6882a8a10e8738bb74d804b3c74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parasralhan/ioc-container/zipball/08016fd3aaf4c6882a8a10e8738bb74d804b3c74",
+                "reference": "08016fd3aaf4c6882a8a10e8738bb74d804b3c74",
+                "shasum": ""
+            },
+            "require": {
+                "bonzer/exceptions": "dev-master",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bonzer\\IOC_Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paras Ralhan",
+                    "email": "ralhan.paras@gmail.com"
+                }
+            ],
+            "description": "Inversion of Control Container - facilitating Interface Oriented Design",
+            "time": "2018-03-13 10:26:03"
+        },
+        {
+            "name": "oyejorge/less.php",
+            "version": "v1.7.0.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oyejorge/less.php.git",
+                "reference": "42925c5a01a07d67ca7e82dfc8fb31814d557bc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/42925c5a01a07d67ca7e82dfc8fb31814d557bc9",
+                "reference": "42925c5a01a07d67ca7e82dfc8fb31814d557bc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.24"
+            },
+            "bin": [
+                "bin/lessc"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Less": "lib/"
+                },
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Agar",
+                    "homepage": "https://github.com/agar"
+                },
+                {
+                    "name": "Martin Jantošovič",
+                    "homepage": "https://github.com/Mordred"
+                },
+                {
+                    "name": "Josh Schmidt",
+                    "homepage": "https://github.com/oyejorge"
+                }
+            ],
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org (Originally maintained by Josh Schmidt)",
+            "homepage": "http://lessphp.gpeasy.com",
+            "keywords": [
+                "css",
+                "less",
+                "less.js",
+                "lesscss",
+                "php",
+                "stylesheet"
+            ],
+            "time": "2017-03-28 22:19:25"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "bonzer/inputs": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": []
+}

@@ -1,0 +1,186 @@
+/* ****************************************************************
+MIXINS
+********************************************************************/
+/* ****************************************************************
+ANIMATIONS
+********************************************************************/
+/* ****************************************************************
+BOX SIZING
+********************************************************************/
+/* =====================================================
+  variables
+======================================================*/
+/*************************************************************
+Styles
+**************************************************************/
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+  background: white;
+}
+.input-wrapper > .button.upload {
+  border-color: #b6dfb8;
+  background: #fafdfa;
+  color: #388e3c;
+}
+.input-wrapper.upload-input-wapper.no-images .images-wrapper,
+.input-wrapper.multi-upload-input-wapper.no-images .images-wrapper {
+  display: none;
+}
+.input-wrapper.upload-input-wapper .images-wrapper,
+.input-wrapper.multi-upload-input-wapper .images-wrapper {
+  clear: both;
+  background: #f4f4f4;
+  margin-top: 2px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  padding: 5px 0 16px;
+}
+.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper,
+.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper {
+  display: inline-block;
+  position: relative;
+  margin: 10px 10px 0;
+  padding: 1px;
+  float: left;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper img,
+.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper img {
+  width: 50px;
+  height: 50px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  -o-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  -ms-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  -moz-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  -webkit-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+}
+.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper i.fa,
+.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper i.fa {
+  float: left;
+  position: absolute;
+  top: -4px;
+  background: rgba(45, 45, 45, 0.21);
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  padding: 14px 3px;
+  color: #FDFDFD;
+  font-size: 18px;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper i.fa.move-img,
+.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper i.fa.move-img {
+  top: -8px;
+  right: -43px;
+  padding: 0;
+  display: inline-block;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: #333333;
+  cursor: move;
+}
+.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper:hover i.fa,
+.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper:hover i.fa {
+  opacity: 1;
+}
+.input-wrapper.upload-input-wapper .images-wrapper .sortable-placeholder,
+.input-wrapper.multi-upload-input-wapper .images-wrapper .sortable-placeholder {
+  background: #ffb74d;
+  width: 60px;
+  height: 60px;
+  float: left;
+  padding: 1px;
+  display: inline-block;
+  -o-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  -ms-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  -moz-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  -webkit-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+  box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
+}
+.input-wrapper.editor-input-wrapper label {
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #f4f4f4;
+  color: #333333;
+  border-color: #f4f4f4;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 5px;
+}
+.input-wrapper.editor-input-wrapper button {
+  -ms-border-radius: 2px !important;
+  -o-border-radius: 2px !important;
+  -webkit-border-radius: 2px !important;
+  -moz-border-radius: 2px !important;
+  border-radius: 2px !important;
+  width: auto;
+}
+.input-wrapper.editor-input-wrapper input,
+.input-wrapper.editor-input-wrapper textarea {
+  float: none !important;
+  width: auto !important;
+}
+.input-wrapper.editor-input-wrapper textarea {
+  width: 100% !important;
+  border-color: #dddddd;
+}
+.input-wrapper.multi-upload-input-wapper .images-wrapper {
+  margin-top: 5px;
+  padding: 2px 0 12px 22px;
+  position: relative;
+  float: left;
+}
+.input-wrapper.style-1.upload-input-wapper .images-wrapper,
+.input-wrapper.style-1.multi-upload-input-wapper .images-wrapper {
+  margin: 4px -3px 15px;
+  width: calc(100% + 6px);
+  border: 1px dashed #dddddd;
+}
+.input-wrapper.style-2.editor-input-wrapper label,
+.input-wrapper.style-3.editor-input-wrapper label {
+  color: #333333;
+}
+.input-wrapper.style-2.upload-input-wapper .images-wrapper,
+.input-wrapper.style-2.multi-upload-input-wapper .images-wrapper {
+  padding: 5px 0 6px;
+}
+.input-wrapper.style-2.editor-input-wrapper label {
+  background: transparent;
+  border-color: transparent;
+}
+.input-wrapper.style-3 > .button.upload {
+  border-color: #b6dfb8;
+  background: #fafdfa;
+  color: #388e3c;
+}
+.input-wrapper.style-3.editor-input-wrapper label {
+  width: auto;
+  background: white;
+  border-color: transparent;
+  color: #333333;
+}
