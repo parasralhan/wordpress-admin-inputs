@@ -23,7 +23,11 @@ class Upload extends Input_Abstract {
       <label for="<?php echo $this->_id; ?>"><?php echo $this->_label; ?></label>
       <input type="text" class="upload input" id="<?php echo $this->_id; ?>" name="<?php echo $this->_name; ?>" value="<?php echo $this->_value; ?>" placeholder="<?php echo $this->_placeholder; ?>" readonly <?php echo $this->_additional_attrs; ?>>
       <button title="<?php echo __('Upload', 'wordpress-admin-inputs')?>" class="upload button upload_image_button" type="button" data-title="Choose" data-update="Insert"><i class="fa fa-upload"></i> <span class="text">Upload</span></button>
-
+      
+      <?php
+      // description
+      echo (isset_not_empty( $this->_desc )) ? "<p class='desc'>{$this->_desc}</p>" : '';
+      ?>
       <!-- Images Wrapper -->
       <div class="images-wrapper">
         <?php if ( isset_not_empty( $this->_value ) ) { ?>
@@ -34,11 +38,7 @@ class Upload extends Input_Abstract {
         <?php } ?>
         <div class="clear"></div>
       </div>
-
-      <?php
-      // description
-      echo (isset_not_empty( $this->_desc )) ? "<p class='desc'>{$this->_desc}</p>" : '';
-      ?>
+      
     </div>
     <?php
     $contents = ob_get_contents();

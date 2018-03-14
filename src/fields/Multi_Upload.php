@@ -28,6 +28,7 @@ class Multi_Upload extends Input_Abstract {
       <label for="<?php echo $this->_id; ?>"><?php echo $this->_label; ?></label>
       <input type="text" class="upload input" id="<?php echo $this->_id; ?>" name="<?php echo $this->_name; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $this->_placeholder; ?>" readonly <?php echo $this->_additional_attrs; ?>>
       <button title="<?php echo __('Add Images', 'wordpress-admin-inputs');?>" class="upload button upload-multiple-images" type="button" data-title="Choose" data-update="Insert"><i class="fa fa-plus-circle"></i> <span class="text">Add</span> </button>
+      <?php echo (isset_not_empty( $this->_desc )) ? "<p class='desc'>{$this->_desc}</p>" : ''; ?>
       <div class="images-wrapper">
         <?php
         if ( isset_not_empty( $this->_value ) ) {
@@ -49,9 +50,7 @@ class Multi_Upload extends Input_Abstract {
         }
         ?>
         <div class="clear"></div>
-      </div>
-      <div class="clear"></div>
-      <?php echo (isset_not_empty( $this->_desc )) ? "<p class='desc'>{$this->_desc}</p>" : ''; ?>
+      </div>      
     </div>
     <?php
     $contents = ob_get_contents();

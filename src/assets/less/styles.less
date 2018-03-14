@@ -95,10 +95,9 @@ Styles
       .box-shadow(none);
       background: @light-gray-color;
       color: @dark-color;
-      border-color: @light-gray-color;
       width: 100%;
-      border-bottom: 1px solid @light-border;
-      margin-bottom: 5px;
+      border: 1px solid @light-border;
+      margin-bottom: 2px;
     }
     button{
       .roundedcorners(2px) !important;
@@ -111,6 +110,14 @@ Styles
     textarea{
       width: 100% !important;
       border-color: @light-border;
+    }
+    p{
+      &.desc{
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid @light-border;
+        margin-bottom: 5px;
+      }
     }
   }
   &.multi-upload-input-wapper{

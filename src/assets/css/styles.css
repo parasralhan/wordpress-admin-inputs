@@ -127,10 +127,9 @@ Styles
   box-shadow: none;
   background: #f4f4f4;
   color: #333333;
-  border-color: #f4f4f4;
   width: 100%;
-  border-bottom: 1px solid #dddddd;
-  margin-bottom: 5px;
+  border: 1px solid #dddddd;
+  margin-bottom: 2px;
 }
 .input-wrapper.editor-input-wrapper button {
   -ms-border-radius: 2px !important;
@@ -148,6 +147,12 @@ Styles
 .input-wrapper.editor-input-wrapper textarea {
   width: 100% !important;
   border-color: #dddddd;
+}
+.input-wrapper.editor-input-wrapper p.desc {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 5px;
 }
 .input-wrapper.multi-upload-input-wapper .images-wrapper {
   margin-top: 5px;
