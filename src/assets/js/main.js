@@ -1,8 +1,7 @@
-jQuery( function () {
+( function ($) {
   "use strcit";
   var Inputs = {
     upload_input_init: function ( $wrapper ) {
-      console.log('called');
       function _toggle_has_images( $wrapper ) {
         if ($wrapper.find( '.image-wrapper' ).length) {
           $wrapper.removeClass( 'no-images' ).addClass( 'has-images' );
@@ -93,8 +92,8 @@ jQuery( function () {
         // Instantiates the variable that holds the media library frame.
         var meta_image_frame;
 
-        $( document.body ).on( "click", '.upload-multiple-images', function ( e ) {
-          var $this = $( this ),
+        $( document.body ).on( "click", '.bonzer-inputs.multi-upload-input-wapper .upload-multiple-images', function ( e ) {
+          var $this = $( e.currentTarget ),
                   $wrapper = $this.parents( '.multi-upload-input-wapper' ),
                   $images_wrapper = $wrapper.find( ".images-wrapper" ),
                   where_to_paste_ids = $wrapper.find( '.input' );
@@ -177,12 +176,13 @@ jQuery( function () {
         // Instantiates the variable that holds the media library frame.
         var meta_image_frame;
 
-        $( document.body ).on( "click", '.upload_image_button', function ( e ) {
+        $( document ).on( "click", '.upload_image_button', function ( e ) {
           var $this = $( e.currentTarget ),
-                  where_to_paste_url = $this.parents( '.upload-input-wapper' ).find( '.input' );
+              where_to_paste_url = $this.parents( '.upload-input-wapper' ).find( '.input' );
 
           e.preventDefault();
           e.stopPropagation();
+
           // Sets up the media library frame
           meta_image_frame = wp.media.frames.meta_image_frame = wp.media( {
             title: $this.data( 'title' ),
@@ -193,6 +193,7 @@ jQuery( function () {
               type: 'image'
             }
           } );
+
           // Runs when an image is selected.
           meta_image_frame.on( 'select', function () {
             var $images_wrapper, $img, $image_wrapper, $cross;
@@ -221,7 +222,9 @@ jQuery( function () {
               'id': "image-1"
             } ).appendTo( $image_wrapper );
             // Sends the attachment URL to our custom image input field.
-            where_to_paste_url.val( media_attachment.url.replace( paths.baseUrl, '' ) ).change();
+            if (media_attachment.url) {
+              where_to_paste_url.val( media_attachment.url.replace( paths.baseUrl, '' ) ).change();
+            }            
             setTimeout(function(){
               $.event.trigger( {
                 type: 'bonzer_inputs.upload.image_added',
@@ -255,6 +258,8 @@ jQuery( function () {
     } );
   }());
 
-} );
+  $.extend(bonzer_inputs, Inputs);
+
+}(jQuery) );
 
 

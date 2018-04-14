@@ -3,7 +3,7 @@
 /*************************************************************
 Styles
 **************************************************************/
-.input-wrapper{
+.input-wrapper.bonzer-inputs{
   input, select, textarea{
     background: white;
   }
@@ -97,7 +97,6 @@ Styles
       color: @dark-color;
       width: 100%;
       border: 1px solid @light-border;
-      margin-bottom: 2px;
     }
     button{
       .roundedcorners(2px) !important;
@@ -114,11 +113,26 @@ Styles
     p{
       &.desc{
         float: left;
-        width: 100%;
+        width: calc(~"100% + 4px");
         border-bottom: 1px solid @light-border;
         margin-bottom: 5px;
       }
     }
+    .wp-editor-wrap{
+      .box-sizing(content-box);
+      *{
+        .box-sizing(content-box);
+      }
+      .quicktags-toolbar{
+        input.button.button-small{
+          display: inline-block;
+        }
+      }
+      .wp-switch-editor{
+        border-bottom-width: 0;
+      }
+    }
+    
   }
   &.multi-upload-input-wapper{
     .images-wrapper{
@@ -172,6 +186,203 @@ Styles
         border-color: transparent;
         color: @dark-color;
       }
+    }
+  }
+}
+
+#edittag, #addtag{
+  .form-field{
+    .input-wrapper.bonzer-inputs{
+      width: 95%;
+      margin-top: 0;
+      margin-bottom: 15px;
+      > label{
+        display: none;
+      }
+      &.style-3{
+        &.select-input-wapper, &.multi-select-input-wapper{
+          padding-top: 7px;
+        }        
+      }
+    }
+  }
+}
+
+#addtag {
+  .bonzer-form-fields-wrapper{
+    padding: 10px;
+    h3{
+      margin: 0 -10px 10px;
+    }
+    .form-field{
+      .input-wrapper.bonzer-inputs{  
+        > label{
+          display: block;
+        }    
+        &.style-1, &.style-2{
+          margin: 0 -10px 15px;
+        }     
+        &.style-1{
+          min-width: 500px;
+          > label{
+            width: calc(~"45% - 2px");
+          }
+          input, select, textarea{
+            width: calc(~"55% - 41px");
+          }
+          select{
+            width: 55%;
+          }
+          &.icon-input-wapper{
+            input{
+              width: calc(~"55% - 73px");
+            }
+          }
+          &.color-input-wapper{
+            input{
+              width: calc(~"55% - 83px");
+            }
+          }
+          &.radio-input-wapper{
+            .options{
+              width: 55%;
+              margin: 0;
+              label{
+                display: block;
+              }
+            }
+          }
+          &.editor-input-wrapper{
+            > label{
+              width: 100%;
+            }
+          }
+        }
+        &.style-3{
+          .roundedcorners(0); 
+          .box-shadow(0 0 0 10px @white);
+        }      
+      }
+    }
+  }  
+}
+#edittag{
+  h3{
+    margin: 0;
+  }
+  .form-field{
+    .input-wrapper.bonzer-inputs{
+      &.checkbox-input-wapper{
+        > label{
+          display: block;   
+          width: 0;
+          padding: 0;
+          span{
+            .opacity(0);
+          }         
+        }
+      }
+    }
+  }
+  
+}
+
+.form-table{
+  .input-wrapper.bonzer-inputs{
+    > label{
+      display: none;
+    }
+    &.checkbox-input-wapper{
+      > label{
+        display: block;
+        width: 0;
+        padding: 0;
+        span{
+          .opacity(0);
+        }
+      }
+    }
+    &.style-1{
+      input, textarea{
+        width: calc(~"100% - 41px");
+      }
+      select{
+        width: 100%;
+      }
+      p{
+        &.desc{
+          margin: 2px -2px 0;
+          clear: both;
+          float: left;
+          width: calc(~"100% + 4px");
+        }
+      }
+      &.color-input-wapper{
+        input{
+          width: calc(~"100% - 83px");
+        }
+      }
+      &.icon-input-wapper{
+        input{
+          width: calc(~"100% - 73px");
+        }
+      }
+      &.editor-input-wrapper{
+        p{
+          &.desc{
+            width: 100%;
+            border: 1px solid @light-border;
+            margin: 0 0 2px;
+          }
+        }
+      }
+      &.radio-input-wapper{
+        padding-top: 5px;
+        .options{
+          width: 100%;
+        }
+      }
+    }
+    &.style-2{
+      padding: 10px;
+      > .button{
+        top: 10px;
+      }
+    }
+    &.style-3{      
+      margin-top: 0;
+      margin-bottom: 15px;
+      &.select-input-wapper, &.multi-select-input-wapper{
+        padding-top: 7px;
+      } 
+      &.checkbox-input-wapper{
+        > label{
+          top: 3px;
+          span{
+            .opacity(0);
+          }
+          &:before, &:after{
+            top: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-meta-box{
+  h2{
+    margin-bottom: 15px;
+  }
+  .input-wrapper.bonzer-inputs{
+    &.style-3{
+      &:nth-child(2){
+        margin-top: 30px;
+      }      
+      margin: 0 15px 15px;
+      width: calc(~"100% - 30px");
+      .roundedcorners(0);
+      .box-shadow(0 0 0 15px @white);
     }
   }
 }

@@ -13,22 +13,22 @@ BOX SIZING
 /*************************************************************
 Styles
 **************************************************************/
-.input-wrapper input,
-.input-wrapper select,
-.input-wrapper textarea {
+.input-wrapper.bonzer-inputs input,
+.input-wrapper.bonzer-inputs select,
+.input-wrapper.bonzer-inputs textarea {
   background: white;
 }
-.input-wrapper > .button.upload {
+.input-wrapper.bonzer-inputs > .button.upload {
   border-color: #b6dfb8;
   background: #fafdfa;
   color: #388e3c;
 }
-.input-wrapper.upload-input-wapper.no-images .images-wrapper,
-.input-wrapper.multi-upload-input-wapper.no-images .images-wrapper {
+.input-wrapper.bonzer-inputs.upload-input-wapper.no-images .images-wrapper,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper.no-images .images-wrapper {
   display: none;
 }
-.input-wrapper.upload-input-wapper .images-wrapper,
-.input-wrapper.multi-upload-input-wapper .images-wrapper {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper {
   clear: both;
   background: #f4f4f4;
   margin-top: 2px;
@@ -37,8 +37,8 @@ Styles
   float: left;
   padding: 5px 0 16px;
 }
-.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper,
-.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper .image-wrapper,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper .image-wrapper {
   display: inline-block;
   position: relative;
   margin: 10px 10px 0;
@@ -50,8 +50,8 @@ Styles
   -moz-border-radius: 25px;
   border-radius: 25px;
 }
-.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper img,
-.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper img {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper .image-wrapper img,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper .image-wrapper img {
   width: 50px;
   height: 50px;
   -ms-border-radius: 25px;
@@ -65,8 +65,8 @@ Styles
   -webkit-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
   box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
 }
-.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper i.fa,
-.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper i.fa {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper .image-wrapper i.fa,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper .image-wrapper i.fa {
   float: left;
   position: absolute;
   top: -4px;
@@ -88,8 +88,8 @@ Styles
   -ms-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
-.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper i.fa.move-img,
-.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper i.fa.move-img {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper .image-wrapper i.fa.move-img,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper .image-wrapper i.fa.move-img {
   top: -8px;
   right: -43px;
   padding: 0;
@@ -101,12 +101,12 @@ Styles
   color: #333333;
   cursor: move;
 }
-.input-wrapper.upload-input-wapper .images-wrapper .image-wrapper:hover i.fa,
-.input-wrapper.multi-upload-input-wapper .images-wrapper .image-wrapper:hover i.fa {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper .image-wrapper:hover i.fa,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper .image-wrapper:hover i.fa {
   opacity: 1;
 }
-.input-wrapper.upload-input-wapper .images-wrapper .sortable-placeholder,
-.input-wrapper.multi-upload-input-wapper .images-wrapper .sortable-placeholder {
+.input-wrapper.bonzer-inputs.upload-input-wapper .images-wrapper .sortable-placeholder,
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper .sortable-placeholder {
   background: #ffb74d;
   width: 60px;
   height: 60px;
@@ -119,7 +119,7 @@ Styles
   -webkit-box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
   box-shadow: 0 0 0px 2px #fff, 0 0 2px 4px #ddd;
 }
-.input-wrapper.editor-input-wrapper label {
+.input-wrapper.bonzer-inputs.editor-input-wrapper label {
   -o-box-shadow: none;
   -ms-box-shadow: none;
   -moz-box-shadow: none;
@@ -129,9 +129,8 @@ Styles
   color: #333333;
   width: 100%;
   border: 1px solid #dddddd;
-  margin-bottom: 2px;
 }
-.input-wrapper.editor-input-wrapper button {
+.input-wrapper.bonzer-inputs.editor-input-wrapper button {
   -ms-border-radius: 2px !important;
   -o-border-radius: 2px !important;
   -webkit-border-radius: 2px !important;
@@ -139,53 +138,239 @@ Styles
   border-radius: 2px !important;
   width: auto;
 }
-.input-wrapper.editor-input-wrapper input,
-.input-wrapper.editor-input-wrapper textarea {
+.input-wrapper.bonzer-inputs.editor-input-wrapper input,
+.input-wrapper.bonzer-inputs.editor-input-wrapper textarea {
   float: none !important;
   width: auto !important;
 }
-.input-wrapper.editor-input-wrapper textarea {
+.input-wrapper.bonzer-inputs.editor-input-wrapper textarea {
   width: 100% !important;
   border-color: #dddddd;
 }
-.input-wrapper.editor-input-wrapper p.desc {
+.input-wrapper.bonzer-inputs.editor-input-wrapper p.desc {
   float: left;
-  width: 100%;
+  width: calc(100% + 4px);
   border-bottom: 1px solid #dddddd;
   margin-bottom: 5px;
 }
-.input-wrapper.multi-upload-input-wapper .images-wrapper {
+.input-wrapper.bonzer-inputs.editor-input-wrapper .wp-editor-wrap {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.input-wrapper.bonzer-inputs.editor-input-wrapper .wp-editor-wrap * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.input-wrapper.bonzer-inputs.editor-input-wrapper .wp-editor-wrap .quicktags-toolbar input.button.button-small {
+  display: inline-block;
+}
+.input-wrapper.bonzer-inputs.editor-input-wrapper .wp-editor-wrap .wp-switch-editor {
+  border-bottom-width: 0;
+}
+.input-wrapper.bonzer-inputs.multi-upload-input-wapper .images-wrapper {
   margin-top: 5px;
   padding: 2px 0 12px 22px;
   position: relative;
   float: left;
 }
-.input-wrapper.style-1.upload-input-wapper .images-wrapper,
-.input-wrapper.style-1.multi-upload-input-wapper .images-wrapper {
+.input-wrapper.bonzer-inputs.style-1.upload-input-wapper .images-wrapper,
+.input-wrapper.bonzer-inputs.style-1.multi-upload-input-wapper .images-wrapper {
   margin: 4px -3px 15px;
   width: calc(100% + 6px);
   border: 1px dashed #dddddd;
 }
-.input-wrapper.style-2.editor-input-wrapper label,
-.input-wrapper.style-3.editor-input-wrapper label {
+.input-wrapper.bonzer-inputs.style-2.editor-input-wrapper label,
+.input-wrapper.bonzer-inputs.style-3.editor-input-wrapper label {
   color: #333333;
 }
-.input-wrapper.style-2.upload-input-wapper .images-wrapper,
-.input-wrapper.style-2.multi-upload-input-wapper .images-wrapper {
+.input-wrapper.bonzer-inputs.style-2.upload-input-wapper .images-wrapper,
+.input-wrapper.bonzer-inputs.style-2.multi-upload-input-wapper .images-wrapper {
   padding: 5px 0 6px;
 }
-.input-wrapper.style-2.editor-input-wrapper label {
+.input-wrapper.bonzer-inputs.style-2.editor-input-wrapper label {
   background: transparent;
   border-color: transparent;
 }
-.input-wrapper.style-3 > .button.upload {
+.input-wrapper.bonzer-inputs.style-3 > .button.upload {
   border-color: #b6dfb8;
   background: #fafdfa;
   color: #388e3c;
 }
-.input-wrapper.style-3.editor-input-wrapper label {
+.input-wrapper.bonzer-inputs.style-3.editor-input-wrapper label {
   width: auto;
   background: white;
   border-color: transparent;
   color: #333333;
+}
+#edittag .form-field .input-wrapper.bonzer-inputs,
+#addtag .form-field .input-wrapper.bonzer-inputs {
+  width: 95%;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+#edittag .form-field .input-wrapper.bonzer-inputs > label,
+#addtag .form-field .input-wrapper.bonzer-inputs > label {
+  display: none;
+}
+#edittag .form-field .input-wrapper.bonzer-inputs.style-3.select-input-wapper,
+#addtag .form-field .input-wrapper.bonzer-inputs.style-3.select-input-wapper,
+#edittag .form-field .input-wrapper.bonzer-inputs.style-3.multi-select-input-wapper,
+#addtag .form-field .input-wrapper.bonzer-inputs.style-3.multi-select-input-wapper {
+  padding-top: 7px;
+}
+#addtag .bonzer-form-fields-wrapper {
+  padding: 10px;
+}
+#addtag .bonzer-form-fields-wrapper h3 {
+  margin: 0 -10px 10px;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs > label {
+  display: block;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1,
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-2 {
+  margin: 0 -10px 15px;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1 {
+  min-width: 500px;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1 > label {
+  width: calc(45% - 2px);
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1 input,
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1 select,
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1 textarea {
+  width: calc(55% - 41px);
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1 select {
+  width: 55%;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1.icon-input-wapper input {
+  width: calc(55% - 73px);
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1.color-input-wapper input {
+  width: calc(55% - 83px);
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1.radio-input-wapper .options {
+  width: 55%;
+  margin: 0;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1.radio-input-wapper .options label {
+  display: block;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-1.editor-input-wrapper > label {
+  width: 100%;
+}
+#addtag .bonzer-form-fields-wrapper .form-field .input-wrapper.bonzer-inputs.style-3 {
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -o-box-shadow: 0 0 0 10px #ffffff;
+  -ms-box-shadow: 0 0 0 10px #ffffff;
+  -moz-box-shadow: 0 0 0 10px #ffffff;
+  -webkit-box-shadow: 0 0 0 10px #ffffff;
+  box-shadow: 0 0 0 10px #ffffff;
+}
+#edittag h3 {
+  margin: 0;
+}
+#edittag .form-field .input-wrapper.bonzer-inputs.checkbox-input-wapper > label {
+  display: block;
+  width: 0;
+  padding: 0;
+}
+#edittag .form-field .input-wrapper.bonzer-inputs.checkbox-input-wapper > label span {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.form-table .input-wrapper.bonzer-inputs > label {
+  display: none;
+}
+.form-table .input-wrapper.bonzer-inputs.checkbox-input-wapper > label {
+  display: block;
+  width: 0;
+  padding: 0;
+}
+.form-table .input-wrapper.bonzer-inputs.checkbox-input-wapper > label span {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.form-table .input-wrapper.bonzer-inputs.style-1 input,
+.form-table .input-wrapper.bonzer-inputs.style-1 textarea {
+  width: calc(100% - 41px);
+}
+.form-table .input-wrapper.bonzer-inputs.style-1 select {
+  width: 100%;
+}
+.form-table .input-wrapper.bonzer-inputs.style-1 p.desc {
+  margin: 2px -2px 0;
+  clear: both;
+  float: left;
+  width: calc(100% + 4px);
+}
+.form-table .input-wrapper.bonzer-inputs.style-1.color-input-wapper input {
+  width: calc(100% - 83px);
+}
+.form-table .input-wrapper.bonzer-inputs.style-1.icon-input-wapper input {
+  width: calc(100% - 73px);
+}
+.form-table .input-wrapper.bonzer-inputs.style-1.editor-input-wrapper p.desc {
+  width: 100%;
+  border: 1px solid #dddddd;
+  margin: 0 0 2px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-1.radio-input-wapper {
+  padding-top: 5px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-1.radio-input-wapper .options {
+  width: 100%;
+}
+.form-table .input-wrapper.bonzer-inputs.style-2 {
+  padding: 10px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-2 > .button {
+  top: 10px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-3.select-input-wapper,
+.form-table .input-wrapper.bonzer-inputs.style-3.multi-select-input-wapper {
+  padding-top: 7px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-3.checkbox-input-wapper > label {
+  top: 3px;
+}
+.form-table .input-wrapper.bonzer-inputs.style-3.checkbox-input-wapper > label span {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.form-table .input-wrapper.bonzer-inputs.style-3.checkbox-input-wapper > label:before,
+.form-table .input-wrapper.bonzer-inputs.style-3.checkbox-input-wapper > label:after {
+  top: 8px;
+}
+.profile-meta-box h2 {
+  margin-bottom: 15px;
+}
+.profile-meta-box .input-wrapper.bonzer-inputs.style-3 {
+  margin: 0 15px 15px;
+  width: calc(100% - 30px);
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -o-box-shadow: 0 0 0 15px #ffffff;
+  -ms-box-shadow: 0 0 0 15px #ffffff;
+  -moz-box-shadow: 0 0 0 15px #ffffff;
+  -webkit-box-shadow: 0 0 0 15px #ffffff;
+  box-shadow: 0 0 0 15px #ffffff;
+}
+.profile-meta-box .input-wrapper.bonzer-inputs.style-3:nth-child(2) {
+  margin-top: 30px;
 }

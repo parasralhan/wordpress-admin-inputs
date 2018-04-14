@@ -61,13 +61,16 @@ class Assets_Loader extends \Bonzer\Inputs\Assets_Loader implements \Bonzer\Inpu
    * Head Code Fragment
    * --------------------------------------------------------------------------
    * 
+   * @param array $replacements
+   * 
    * @Return Assets_Loader 
    * */
-  public function load_head_fragment() {
+  public function load_head_fragment(array $replacements = null) {
+    wp_enqueue_media();
     $this->_Event->listen( 'inputs_css_end', function () {
       echo file_get_contents( $this->_wp_assets_dir . '/css/styles.css' );
     } );
-    return parent::load_head_fragment();
+    return parent::load_head_fragment($replacements);
   }
 
   /**
@@ -75,13 +78,15 @@ class Assets_Loader extends \Bonzer\Inputs\Assets_Loader implements \Bonzer\Inpu
    * Code fragment to be inserted just before the body tag closes
    * --------------------------------------------------------------------------
    * 
+   * @param array $replacements
+   * 
    * @Return Assets_Loader
    * */
-  public function load_before_body_close_fragment() {
-    $this->_Event->listen( 'inputs_js_end', function () {
+  public function load_before_body_close_fragment(array $replacements = null) {    
+    $this->_Event->listen( 'inputs_js_end', function () {      
       echo file_get_contents( $this->_wp_assets_dir . '/js/main.js' );
     } );
-    return parent::load_before_body_close_fragment();
+    return parent::load_before_body_close_fragment($replacements);
   }
 
 }

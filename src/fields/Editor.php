@@ -27,7 +27,7 @@ class Editor extends Input_Abstract {
   protected function _build_input() {
     ob_start();
     ?>
-    <div class="input-wrapper editor-input-wrapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
+    <div class="bonzer-inputs input-wrapper editor-input-wrapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
       <label for="<?php echo $this->_id; ?>"><?php echo $this->_label; ?></label>
       <?php
       echo (isset_not_empty( $this->_desc )) ? "<p class='desc'>{$this->_desc}</p>" : '';

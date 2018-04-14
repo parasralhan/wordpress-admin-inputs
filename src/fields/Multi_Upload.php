@@ -17,7 +17,7 @@ class Multi_Upload extends Input_Abstract {
   protected function _build_input() {
     ob_start();
     ?>
-    <div class="input-wrapper multi-upload-input-wapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
+    <div class="bonzer-inputs input-wrapper multi-upload-input-wapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
       <?php
       if ( isset_not_empty( $this->_value ) ) {
         $value = implode( ',', array_unique( explode( ',', $this->_value ) ) );
@@ -50,7 +50,8 @@ class Multi_Upload extends Input_Abstract {
         }
         ?>
         <div class="clear"></div>
-      </div>      
+      </div>   
+      <div class="clear"></div>   
     </div>
     <?php
     $contents = ob_get_contents();

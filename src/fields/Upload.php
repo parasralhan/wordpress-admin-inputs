@@ -19,7 +19,7 @@ class Upload extends Input_Abstract {
   protected function _build_input() {
     ob_start();
     ?>
-    <div class="input-wrapper upload-input-wapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
+    <div class="bonzer-inputs input-wrapper upload-input-wapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
       <label for="<?php echo $this->_id; ?>"><?php echo $this->_label; ?></label>
       <input type="text" class="upload input" id="<?php echo $this->_id; ?>" name="<?php echo $this->_name; ?>" value="<?php echo $this->_value; ?>" placeholder="<?php echo $this->_placeholder; ?>" readonly <?php echo $this->_additional_attrs; ?>>
       <button title="<?php echo __('Upload', 'wordpress-admin-inputs')?>" class="upload button upload_image_button" type="button" data-title="Choose" data-update="Insert"><i class="fa fa-upload"></i> <span class="text">Upload</span></button>
@@ -38,7 +38,7 @@ class Upload extends Input_Abstract {
         <?php } ?>
         <div class="clear"></div>
       </div>
-      
+      <div class="clear"></div>
     </div>
     <?php
     $contents = ob_get_contents();
