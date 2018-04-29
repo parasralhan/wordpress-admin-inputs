@@ -22,12 +22,13 @@
      * Handle Images Removal | Multi-Upload & Upload Input Fields
      *==========================================================*/
     handle_images_removal: function ( ) {
-      $( document.body ).on( "click", ".images-wrapper i.fa", function ( e ) {
+      $( document.body ).on( "click", ".images-wrapper i.fa.remove-img", function ( e ) {
         var $this = $( this ),
                 src = $this.data( "image" ),
-                value, changed_value, value_array, index,
+                value, value_array, image_index,
                 image_id = $this.attr( 'id' ),
                 $input_wrapper = $this.parents( ".input-wrapper" ),
+                image_numeric_id = $this.parents('.image-wrapper').attr( 'data-id' ),
                 $input = $input_wrapper.find( ".input" );
 
         (function change_input_value() {
@@ -37,8 +38,8 @@
           } else {
             value_array = value;
           }
-          index = value_array.indexOf( src );
-          value_array.splice( index, 1 );
+          image_index = value_array.indexOf( image_numeric_id );
+          value_array.splice( image_index, 1 );
           $input.val( value_array.toString() ).change();
         }());
 
@@ -223,7 +224,7 @@
             } ).appendTo( $image_wrapper );
             // Sends the attachment URL to our custom image input field.
             if (media_attachment.url) {
-              where_to_paste_url.val( media_attachment.url.replace( paths.baseUrl, '' ) ).change();
+              where_to_paste_url.val( media_attachment.url.replace(bonzer_inputs.base_url, '') ).change();
             }            
             setTimeout(function(){
               $.event.trigger( {

@@ -177,8 +177,8 @@ Styles
 }
 .input-wrapper.bonzer-inputs.style-1.upload-input-wapper .images-wrapper,
 .input-wrapper.bonzer-inputs.style-1.multi-upload-input-wapper .images-wrapper {
-  margin: 4px -3px 15px;
-  width: calc(100% + 6px);
+  margin: 4px 0px 0;
+  width: 100%;
   border: 1px dashed #dddddd;
 }
 .input-wrapper.bonzer-inputs.style-2.editor-input-wrapper label,
