@@ -32,7 +32,7 @@ class Upload extends Input_Abstract {
       <div class="images-wrapper">
         <?php if ( isset_not_empty( $this->_value ) ) { ?>
           <div class="image-wrapper">
-            <img src="<?php echo SITE_BASE_URL . $this->_value ?>" class="img-responsive img-circle">
+            <img src="<?php echo home_url() . $this->_value ?>" class="img-responsive img-circle">
             <i class="fa fa-times remove-img" data-image="<?php echo $this->_value; ?>" id="image-1"></i>
           </div>        
         <?php } ?>
