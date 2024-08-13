@@ -13,7 +13,7 @@
   "prefer-stable" : true,
   "require": {
     "php": ">=5.4.0",
-    "bonzer/inputs": "v0.0.3"
+    "bonzer/inputs": "v0.0.4"
   },
   "autoload": {
     "files": ["src/bootstrap.php"],
