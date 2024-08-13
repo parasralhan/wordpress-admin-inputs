@@ -6,6 +6,7 @@ use Bonzer\Inputs\contracts\Input_Abstract;
 class Upload extends Input_Abstract {
 
   public function __construct( $args ) {
+
     parent::__construct( $args );
   }
 
@@ -14,23 +15,38 @@ class Upload extends Input_Abstract {
    * Build Upload input
    * --------------------------------------------------------------------------
    *
-   * @Return: html
+   * @return string
    * */
   protected function _build_input() {
+
     ob_start();
     ?>
     <div class="bonzer-inputs input-wrapper upload-input-wapper" data-showif='<?php echo $this->_conditional_data(); ?>'>
 
-      <label for="<?php echo $this->_id; ?>">
-        <?php echo $this->_label; ?>
-      </label>
+      <?php $this->_label(); ?>
 
       <div>
-        <input type="text" class="upload input" id="<?php echo $this->_id; ?>" name="<?php echo $this->_name; ?>" value="<?php echo $this->_value; ?>" placeholder="<?php echo $this->_placeholder; ?>" readonly <?php echo $this->_additional_attrs; ?>>
-        <button title="<?php echo __('Upload', 'wordpress-admin-inputs')?>" class="upload button upload_image_button" type="button" data-title="Choose" data-update="Insert"><i class="fa fa-upload"></i> <span class="text">Upload</span></button>
+        <input 
+          type="text" class="upload input" 
+          id="<?php echo $this->_id; ?>" 
+          name="<?php echo $this->_name; ?>" 
+          value="<?php echo $this->_value; ?>" 
+          placeholder="<?php echo $this->_placeholder; ?>" 
+          readonly 
+          <?php echo $this->_additional_attrs; ?> 
+        />
+
+        <button 
+          title="<?php echo __('Upload', 'wordpress-admin-inputs')?>" 
+          class="upload button upload_image_button" 
+          type="button" 
+          data-title="Choose" 
+          data-update="Insert"
+        >
+          <i class="fa fa-upload"></i>&nbsp;
+          <span class="text">Upload</span>
+        </button>
         
-        <?php echo $this->_desc ? "<p class='desc'>{$this->_desc}</p>" : '';  ?>
-        <!-- Images Wrapper -->
         <div class="images-wrapper">
 
           <?php if ( ! empty( $this->_value ) ) { ?>
@@ -41,15 +57,15 @@ class Upload extends Input_Abstract {
             </div>    
 
           <?php } ?>
+
           <div class="clear"></div>
         </div>
       </div>
 
     </div>
+
     <?php
-    $contents = ob_get_contents();
-    ob_end_clean();
-    return $contents;
+    return ob_get_clean();
   }
 
 }
